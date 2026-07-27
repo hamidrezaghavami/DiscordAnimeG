@@ -1,0 +1,21 @@
+{
+  "name": "discordanimeg",
+  "version": "1.0.0",
+  "description": "A backend-driven anime MMO & gacha raid engine built with Node.js, SQLite, and Discord.js, featuring real-time event loops, interactive button combat, and secure state management.",
+  "homepage": "https://github.com/hamidrezaghavami/DiscordAnimeG#readme",
+  "bugs": {
+    "url": "https://github.com/hamidrezaghavami/DiscordAnimeG/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamidrezaghavami/DiscordAnimeG.git"
+  },
+  "license": "MIT",
+  "author": "HamidReza Ghavami",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "Jest"
+  },
+  "keywords": []
+}
