@@ -1,23 +1,24 @@
-import Database from 'better-sqlite3';
+import { DatabaseSync } from 'node:sqlite';
 
-// Creates or opens the local database file automatically
-const db = new Database('game.db');
+// Creates or opens the local database file automatically using Node's native engine!
+const db = new DatabaseSync('game.db');
 
-// Set SQLite performance and safety settings
-db.pragma('journal_mode= WAL');
+// Set SQLite performance mode using standard SQL
+db.exec('PRAGMA journal_mode = WAL;');
 
-export function initDatabase() { 
-    // able for player profiles
-    db.exec(`
-        CREATE TABLE IF NOT EXISTS players (
+// Initialize database tables
+export function initDatabase() {
+  // Table for player profiles
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS players (
       discord_id TEXT PRIMARY KEY,
       gold INTEGER DEFAULT 100,
       stamina INTEGER DEFAULT 100,
       created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-      )
-    `);
+    )
+  `);
 
-    // Table for anime heroes owned by players
+  // Table for anime heroes owned by players
   db.exec(`
     CREATE TABLE IF NOT EXISTS inventory (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -29,7 +30,7 @@ export function initDatabase() {
     )
   `);
 
-  console.log('DataBase initialized Successfully!');
+  console.log('Database initialized successfully using native Node SQLite!');
 }
 
 export default db;
