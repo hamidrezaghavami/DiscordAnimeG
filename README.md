@@ -37,30 +37,25 @@ DiscordAnimeG/
 * A Discord Application and Bot Token from the Discord Developer Portal
 * A VPN or DPI bypass tool (such as GoodbyeDPI) if accessing Discord's API from Turkey
 
-### Installation
+## Installation
+
+### Option 1: Run with Docker (Recommended)
 
 1. Clone the repository:
-```bash
-git clone https://github.com/your-username/DiscordAnimeG.git
-cd DiscordAnimeG
-```
+   ```bash
+   git clone [https://github.com/your-username/DiscordAnimeG.git](https://github.com/your-username/DiscordAnimeG.git)
+   cd DiscordAnimeG
 
-
-2. Install dependencies:
-```bash
-npm install discord.js better-sqlite3 dotenv
-```
-
-
-3. Create a `.env` file in the root directory and add your bot token:
+2. Create a `.env` file in the root directory and add your bot token:
 ```env
 DISCORD_TOKEN=your_bot_token_here
 ```
 
 
-4. Run the application:
+3. Build and run the Docker container:
 ```bash
-node index.js
+docker build -t discord-anime-g .
+docker run -d --env-file .env discord-anime-g
 ```
 ## License
 This project is open source and available under the MIT License.
